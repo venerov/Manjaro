@@ -1,4 +1,4 @@
-#Создать файл `usbreset.c` со следующим содержимым:
+# Создать файл `usbreset.c` со следующим содержимым:
 ```
 /* usbreset -- send a USB port reset to a USB device */
 
@@ -41,19 +41,19 @@ close(fd);
 return 0;
 }
 ```
-Скомпилировать:
+# Скомпилировать:
 ```
 cc usbreset.c -o usbreset
 ```
-скопировать в `/usr/bin/`, сделать исполняемым:
+# Скопировать в `/usr/bin/`, сделать исполняемым:
 ```
 udo chmod +x /usr/bin/usbreset
 ```
-Создать скрипт:
+# Создать скрипт:
 ```
 #!/bin/bash
 bus=$(lsusb | grep Xbox360 | gawk '{print $2}')
 port=$(lsusb | grep Xbox360 | gawk '{print $4}' | cut -d":" -f1)
 sudo usbreset /dev/bus/usb/$bus/$port
 ```
-сделать исполняемым.
+# Сделать исполняемым.
