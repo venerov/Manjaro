@@ -1,4 +1,4 @@
-Создать файл `usbreset.c` со следующим содержимым:
+#Создать файл `usbreset.c` со следующим содержимым:
 ```
 /* usbreset -- send a USB port reset to a USB device */
 
